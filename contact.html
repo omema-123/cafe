@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Cozy Café in Karachi. Find our café location, opening hours, and contact details — we’re here to serve your favorite coffee and desserts.">
+  <title>Contact Cozy Café | Visit Us or Order Coffee in Karachi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+   <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+        <img src="./cozy-cafe-logo.jpg" alt="Cozy Café official logo">
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Right Side Menu -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link " href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./menue.html">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="overlay">
+      <h1>Get in Touch ☕</h1>
+      <p>We’d love to hear from you! Let’s stay connected.</p>
+    </div>
+  </section>
+
+  <!-- Contact Info -->
+  <section class="contact-info">
+    <div class="info-card">
+      <i class="fa-solid fa-location-dot"></i>
+      <h3>Visit Us</h3>
+      <p>123 Coffee Street, Karachi, Pakistan</p>
+    </div>
+
+    <div class="info-card">
+      <i class="fa-solid fa-phone"></i>
+      <h3>Call Us</h3>
+      <p>+92 300 1234567</p>
+    </div>
+
+    <div class="info-card">
+      <i class="fa-solid fa-envelope"></i>
+      <h3>Email</h3>
+      <p>hello@cafearoma.com</p>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-form-section">
+    <div class="form-container">
+      <h2>Send Us a Message</h2>
+      <form id="cafearoma-contact">
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          oninvalid="this.setCustomValidity('☕ Please tell us your name — every guest matters at Café Aroma!')"
+          oninput="this.setCustomValidity('')"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          oninvalid="this.setCustomValidity('📧 We’d love to reply — please enter your email!')"
+          oninput="this.setCustomValidity('')"
+        />
+        <input type="text" name="subject" placeholder="Subject" />
+        <textarea
+          name="message"
+          placeholder="Write your message..."
+          required
+          oninvalid="this.setCustomValidity('💬 Don’t be shy — we’d love to hear your thoughts!')"
+          oninput="this.setCustomValidity('')"
+        ></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <!-- Success message -->
+      <div id="success-message" class="success-message">
+        ✨ Thank you! Your message has been sent successfully ☕
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="map-container">
+    <h2>Find Us Here</h2>
+    <div class="map-box">
+      <iframe
+        src="https://www.google.com/maps?q=Karachi+Pakistan&output=embed"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+      <div class="map-label">☕ Café Aroma – Karachi</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="quote">“Good ideas start with great coffee.” ☕</p>
+    <p class="info">© 2025 Café Aroma | Karachi, Pakistan</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+
+  <!-- === Custom Form Success Script === -->
+  <script>
+    const form = document.getElementById("cafearoma-contact");
+    const successMsg = document.getElementById("success-message");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // stop page reload
+      if (form.checkValidity()) {
+        successMsg.style.display = "block";
+        form.reset();
+        setTimeout(() => {
+          successMsg.style.display = "none";
+        }, 4000);
+      } else {
+        form.reportValidity();
+      }
+    });
+  </script>
+</body>
+</html>
